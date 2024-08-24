@@ -1,0 +1,26 @@
+{
+  "name": "STM32 Delay",
+  "version": "0.0.1",
+  "description": "Implementation of delay funtions for STM32CubeHal",
+  "keywords": "stm32, stm32cube, delay, ",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/STM32-pio-libs/stm32-Delay"
+  },
+  "authors":
+  [
+    {
+      "name": "Anurag Kumar Singh",
+      "email": "anurag3301.0x0@gmail.com",
+      "url": "https://github.com/anurag3301",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/STM32-pio-libs",
+  "dependencies": {
+  },
+  "frameworks": "stm32cube",
+  "platforms": "ststm32"
+}

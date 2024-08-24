@@ -1,7 +1,7 @@
 #include "main.h"
 #include "delay.h"
 
-uint32_t DWT_Delay_Init(void){
+uint32_t Delay_Init(void){
     /* Disable TRC */
     CoreDebug->DEMCR &= ~CoreDebug_DEMCR_TRCENA_Msk; // ~0x01000000;
     /* Enable TRC */
@@ -31,14 +31,14 @@ uint32_t DWT_Delay_Init(void){
     }
 }
 
-void DWT_Delay_us(volatile uint32_t au32_microseconds){
+void Delay_us(volatile uint32_t au32_microseconds){
   uint32_t au32_initial_ticks = DWT->CYCCNT;
   uint32_t au32_ticks = (HAL_RCC_GetHCLKFreq() / 1000000);
   au32_microseconds *= au32_ticks;
   while ((DWT->CYCCNT - au32_initial_ticks) < au32_microseconds-au32_ticks);
 }
 
-void DWT_Delay_ms(volatile uint32_t au32_milliseconds){
+void Delay_ms(volatile uint32_t au32_milliseconds){
   uint32_t au32_initial_ticks = DWT->CYCCNT;
   uint32_t au32_ticks = (HAL_RCC_GetHCLKFreq() / 1000);
   au32_milliseconds *= au32_ticks;
